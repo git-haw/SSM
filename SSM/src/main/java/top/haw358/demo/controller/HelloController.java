@@ -1,0 +1,31 @@
+package top.haw358.demo.controller;
+
+import com.alibaba.fastjson.JSON;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import top.haw358.demo.model.User;
+import top.haw358.demo.service.impl.UserServiceImpl;
+
+/**
+ * Created by haw on 17-5-13.
+ */
+@Controller
+public class HelloController {
+    private static Logger logger = Logger.getLogger(HelloController.class);
+    @Autowired
+    private UserServiceImpl userService;
+
+    @RequestMapping("/showView")
+    public ModelAndView showView() {
+        User user = userService.getUserById(1);
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("demo");
+        modelAndView.addObject("user", user);
+
+        return modelAndView;
+    }
+}
