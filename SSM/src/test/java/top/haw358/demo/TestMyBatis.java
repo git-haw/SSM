@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.haw358.demo.model.User;
-import top.haw358.demo.service.impl.UserServiceImpl;
+import top.haw358.demo.service.UserService;
 
 /**
  * Created by haw on 17-5-14.
@@ -20,12 +20,12 @@ public class TestMyBatis {
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
     //	private ApplicationContext ac = null;
     @Autowired
-    private UserServiceImpl userService = null;
+    private UserService userService = null;
 
 //	@Before
 //	public void before() {
 //		ac = new ClassPathXmlApplicationContext("applicationContext.xml");
-//		userService = (IUserService) ac.getBean("userService");
+//		userService = (UserService) ac.getBean("userService");
 //	}
 
     @Test
